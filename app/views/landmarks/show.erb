@@ -8,3 +8,7 @@
     <td><%= @landmark.year_completed %></td>
   </tr>
 <table>
+<form action='/landmarks/<%= @landmark.id %>/delete' method = 'post'>
+  <input type="hidden" id="hidden" name="_method" value="delete">
+  <button id="delete">Delete</button>
+</form>

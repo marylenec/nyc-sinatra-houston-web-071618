@@ -1,0 +1,31 @@
+<h1>FiguresController New.erb</h1>
+<!-- create new figure with a title -->
+<form action="/figures" method="post">
+  <label>Name:</label>
+  <input type="text" name="figure[name]">
+
+  <p>
+    <% Title.all.each do |title| %>
+    <%=title.name%><input type="checkbox" name="figure[title_ids][]" id="<%=title.id%>" value="<%=title.id%>"><br>
+    <% end %>
+  <p>
+
+  <h2>Create New Title:</h2>
+  <label>Name:</label>
+  <input type="text" name="figure[titles][][name]">
+
+
+  <!--  landmark -->
+  <p>
+    <% Landmark.all.each do |landmark| %>
+    <%=landmark.name%><input type="checkbox" name="figure[landmark_ids][]" id="<%=landmark.id%>" value="<%=landmark.id%>"><br>
+    <% end %>
+  <p>
+
+<h2>Create New Landmark:</h2>
+<label>Name:</label>
+<input type="text" name="figure[landmarks][][name]">
+<label>Year:</label>
+<input type="text" name="figure[landmarks][][year_completed]">
+<input type="submit" value="Create New Figure">
+</form>
